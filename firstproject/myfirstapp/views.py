@@ -5,5 +5,9 @@ def index(request):
     return render(request, 'myfirstapp/index.html')
 
 def bonjour(request):
-    nom=request.GET["nom"]
-    return render(request,'myfirstapp/bonjour.html', {"nom":nom})
+    contexte = {
+        "nom": request.GET.get("nom"),
+        "prenom": request.GET.get("prenom"),
+        "age": request.GET.get("age"),
+    }
+    return render(request, 'myfirstapp/bonjour.html', contexte)

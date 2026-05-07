@@ -1,15 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <title>formulaire</title>
 </head>
 <body>
     <form action="/myfirstapp/bonjour" method="get">
-    {% csrf_token %}
-        <label for="nom"> Nom :</label>
-        <input type="text" name="nom"/>
-        <input type="submit" value="envoyer"/>
+        {% csrf_token %}
+        <p>
+            <label for="nom"> Nom : </label>
+            <input type="text" name="nom"/>
+        </p>
+        <p>
+            <label for="prenom"> Prénom : </label>
+            <input type="text" name="prenom"/>
+        </p>
+        <p>
+            <label for="age"> Âge : </label>
+            <input type="number" name="age"/>
+        </p>
+
+        <input type="submit" value="envoyer" />
     </form>
 </body>
 </html>
